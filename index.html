@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JAMSS House-Database</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/styles.css">
+    <script>
+      function openPage(name) {
+        window.location.href = "pages/" + name + ".html";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="topbar">
+      <img src="resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;">
+      <h1 id="pageTitle" style="float:left;margin-left:10px;">JAMSS House Database</h1>
+    </div>
+    <div id="content">
+      <button onclick="openPage('rentals')">Rentals</button>
+    </div>
+    <div id="content">
+      <button onclick="openPage('wo')">Work Orders</button>
+    </div>
+    <div id="content">
+      <button onclick="openPage('people')">People</button>
+    </div>
+  </body>
+</html>

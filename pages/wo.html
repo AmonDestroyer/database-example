@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JAMSS House-Work Orders</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
+    <script>
+      function openPage(name) {
+        window.location.href = "pages/" + name + ".html";
+      }
+
+      function returnToHomePage() {
+        window.location.href = "../index.html";
+      }
+
+      function makeCall() {
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="topbar">
+      <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
+      <h1 id="pageTitle" style="float:left;margin-left:10px;">Work Orders</h1>
+    </div>
+    <div id="content">
+      <button onclick="makeCall()">New Work Order</button>
+    </div>
+    <div id="content">
+      <button onclick="makeCall()">View Work Orders</button>
+    </div>
+  </body>
+</html>
