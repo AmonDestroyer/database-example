@@ -1,6 +1,6 @@
 <?php
 
-include('credentials.ini');
+include('../config/credentials.ini');
 
 $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
 or die('Error connecting to MySQL server.');
@@ -25,7 +25,7 @@ or die('Error connecting to MySQL server.');
 
 $query = "SELECT first_name, last_name, job_title, phone FROM employee ";
 $query = $query."JOIN person USING(ssn) ";
-$query = $query."ORDER BY lname, fname;";
+$query = $query."ORDER BY last_name, first_name;";
 ?>
 
 <p>
