@@ -36,6 +36,21 @@ button {
   width: 25%;
 }
 
+input {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 25%;
+}
+
 a {
   color: #2196F3; /* Blue */
   text-decoration: none;
