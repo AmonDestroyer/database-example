@@ -20,19 +20,12 @@ or die('Error connecting to MySQL server.');
   
 <?php
   
-$manu_name = $_POST['manu_name'];
-
-$manu_name = mysqli_real_escape_string($conn, $manu_name);
 // this is a small attempt to avoid SQL injection
 // better to use prepared statements
 
-$query = "SELECT fname, lname, description FROM items ";
-$query = $query."JOIN orders USING(order_num) ";
-$query = $query."JOIN customer USING(customer_num) ";
-$query = $query."JOIN manufact using(manu_code) ";
-$query = $query."JOIN stock using(stock_num, manu_code) ";
-$query = $query."WHERE manu_name = ";
-$query = $query."'".$manu_name."' ORDER BY lname, fname;";
+$query = "SELECT first_name, last_name, job_title, phone FROM employee ";
+$query = $query."JOIN person USING(ssn) ";
+$query = $query."ORDER BY lname, fname;";
 ?>
 
 <p>
@@ -55,7 +48,7 @@ print "<pre>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "\n";
-    print "$row[fname]  $row[lname]  $row[description]";
+    print "$row[first_name]  $row[last_name]  $row[job_title] $row[phone]";
   }
 print "</pre>";
 
