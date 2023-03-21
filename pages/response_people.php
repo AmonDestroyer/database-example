@@ -53,9 +53,9 @@ print "</tr>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "<tr>";
-    print "<td>".$row[first_name]." ".$row[last_name]."</td>";
-    print "<td>".$row[job_title]."</td>";
-    print "<td>".$row[phone]."</td";
+    print "<td>$row[first_name] $row[last_name]</td>";
+    print "<td>$row[job_title]</td>";
+    print "<td>$row[phone]</td>";
     print "</tr>";
   }
 print "</table>";
