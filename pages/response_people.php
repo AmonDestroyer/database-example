@@ -66,8 +66,8 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
     print "<td>$row[phone]</td>";
 
     print "<td>";
-    print "$row[street_num] $row[apt] $row[street]<br>";
-    if ($row[apt] != NULL) {
+    print "$row[street_num] $row[street]<br>";
+    if ($row[apt] != "") {
       print "apt $row[apt]<br>";
     }
     print "$row[city], $row[state_code]";
