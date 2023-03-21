@@ -38,16 +38,42 @@ $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 <?php
 print "<form action='' method='POST'>";
 print "<label for='type'>Work Order Type:</label>";
-print "<select name='type' id='type'>";
+print "<select name='type' id='type' onchange='this.form.submit()'>";
 print "<option value=''>--Select--</option>";
 while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
-  print "<option value='$row[id]'>$row[name]</option>";
+  $selected = ($_POST['type'] == $row['id']) ? 'selected' : '';
+  print "<option value='$row[id]' $selected>$row[name]</option>";
 }
 print "</select>";
 print "</form>";
 ?>
 
 <hr>
+
+<?php
+mysqli_free_result($result);
+$query = "SELECT id, summary FROM work_order ";
+$query = $query."WHERE type=$_POST[type]";
+$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+?>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Summary</th>
+</tr>
+<?php
+while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
+  print "<tr>";
+  print "<td>$row[id]</td>";
+  print "<td>$row[summary]</td>";
+  print "</tr>";
+}
+
+mysqli_free_result($result);
+mysqli_close($conn);
+?>
+</table>
 
 <p>
   Table Ouput Here
