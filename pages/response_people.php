@@ -67,6 +67,14 @@ mysqli_close($conn);
 
 ?>
  
+<form action="../">
+  <input type="submit" value="Home">
+</form>
+
+<form action="people.html">
+  <input type="submit" value="Back">
+</form>
+
 </body>
 </html>
 	  
