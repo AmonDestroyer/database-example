@@ -23,11 +23,9 @@
       <h1 id="pageTitle" style="float:left;margin-left:10px;">People</h1>
     </div>
     <form method="POST" action="response_people.php">
-      <input type="submit" value="Employee Directory">
-    </form>
-
-    <form method="POST" action="response_people.php">
-      <input type="submit" value="Tenant Directory">
+      <input type="radio" name="employee" value="Employee">
+      <input type="radio" name="tenant" value="Tenant">
+      <input type="submit" value="Directory">
     </form>
     
     <div id="content">

@@ -51,6 +51,7 @@ input {
   width: 25%;
 }
 
+/* Links */
 a {
   color: #2196F3; /* Blue */
   text-decoration: none;
@@ -59,6 +60,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Tables  */
 
 table {
   font-family: Arial, Helvetica, sans-serif;
