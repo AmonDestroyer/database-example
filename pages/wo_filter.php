@@ -65,10 +65,10 @@ print "<tr>";
 print "<th>ID</th>";
 print "<th>Summary</th>";
 print "</tr>";
-while($row = mysqli_fetch_array($table, MYSQL_BOTH)) {
+while($item = mysqli_fetch_array($table, MYSQL_BOTH)) {
   print "<tr>";
-  print "<td>$row[id]</td>";
-  print "<td>$row[summary]</td>";
+  print "<td>$item[id]</td>";
+  print "<td>$item[summary]</td>";
   print "</tr>";
 }
 
