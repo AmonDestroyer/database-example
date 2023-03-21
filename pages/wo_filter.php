@@ -55,7 +55,7 @@ if ($_POST['type'] != '') {
 mysqli_free_result($result);
 $query = "SELECT id, summary FROM work_order ";
 $query = $query."WHERE type=$_POST[type];";
-$result = mysqli_query($conn, $query) or die(mysqli_error($conn));
+$table = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 print "<p>Query:</p>";
 print $query;
@@ -65,10 +65,10 @@ print "<tr>";
 print "<th>ID</th>";
 print "<th>Summary</th>";
 print "</tr>";
-while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
+while($row = mysqli_fetch_array($table, MYSQL_BOTH)) {
   print "<tr>";
-  // print "<td>$row[id]</td>";
-  // print "<td>$row[summary]</td>";
+  print "<td>$row[id]</td>";
+  print "<td>$row[summary]</td>";
   print "</tr>";
 }
 
