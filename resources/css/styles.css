@@ -36,7 +36,7 @@ button {
   width: 25%;
 }
 
-#sub {
+input[type="submit"] {
   background-color: #4CAF50; /* Green */
   border: none;
   color: rgb(255, 255, 255);
