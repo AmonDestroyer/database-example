@@ -44,24 +44,28 @@ Result of query:
 $result = mysqli_query($conn, $query)
 or die(mysqli_error($conn));
 
-print "<pre>";
+print "<table>";
+print "<tr>";
+print "<th>Name</th>";
+print "<th>Title</th>";
+print "<th>Phone Number</th>";
+print "</tr>";
+print "</table>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
-    print "\n";
-    print "$row[first_name]  $row[last_name]  $row[job_title] $row[phone]";
+    print "<tr>";
+    print "<td>".$row[first_name]." ".$row[last_name]."</td>";
+    print "<td>".$row[job_title]."</td>";
+    print "<td>".$row[phone]."</td";
+    print "</tr>";
   }
-print "</pre>";
+print "</table>";
 
 mysqli_free_result($result);
 
 mysqli_close($conn);
 
 ?>
-
-<p>
-<hr>
-<form action="findManufacturerCustomers.html" method="POST">
-<input type="submit" value="return">
  
 </body>
 </html>
