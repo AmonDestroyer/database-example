@@ -44,10 +44,10 @@ Result of query:
 
 <table>
 <tr>
-<th>Name</th>;
-<th>Title</th>;
-<th>Phone Number</th>;
-</tr>;
+<th>Name</th>
+<th>Title</th>
+<th>Phone Number</th>
+</tr>
 <?php
 $result = mysqli_query($conn, $query)
 or die(mysqli_error($conn));
