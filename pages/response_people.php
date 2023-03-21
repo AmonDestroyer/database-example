@@ -67,10 +67,11 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
 
     print "<td>";
     print "$row[street_num] $row[street]<br>";
-    print "apt $row[apt]<br>";
-    // if ($row[apt] != "") {
-    //   print "apt $row[apt]<br>";
-    // }
+    print "apt $row[apt]";
+    if (isset($row[apt])) {
+      print "is set";
+    }
+    print "<br>";
     print "$row[city], $row[state_code]";
     print "</td>";
     print "</tr>";
