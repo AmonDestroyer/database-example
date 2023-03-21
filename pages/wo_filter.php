@@ -66,8 +66,8 @@ print "<th>Summary</th>";
 print "</tr>";
 while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
   print "<tr>";
-  print "<td>$row[id]</td>";
-  print "<td>$row[summary]</td>";
+  // print "<td>$row[id]</td>";
+  // print "<td>$row[summary]</td>";
   print "</tr>";
 }
 
