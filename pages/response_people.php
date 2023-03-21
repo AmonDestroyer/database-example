@@ -70,9 +70,7 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
     if (array_key_exists("apt",$row)) {
       print "apt $row[apt]<br>";
     }
-    if (is_null($row[apt])) {
-      print "is null";
-    }
+    echo $row[apt];
     print "$row[city], $row[state_code]";
     print "</td>";
     print "</tr>";
