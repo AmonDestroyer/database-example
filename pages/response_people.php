@@ -6,6 +6,11 @@ $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
 or die('Error connecting to MySQL server.');
 
 $type = $_POST['personType'];
+if ($type == "Employee") {
+  $table = "employee";
+} else {
+  $table = "tenant";
+}
 ?>
 
 <html>
@@ -29,8 +34,9 @@ $type = $_POST['personType'];
 // this is a small attempt to avoid SQL injection
 // better to use prepared statements
 
-$query = "SELECT first_name, last_name, job_title, phone FROM employee ";
-$query = $query."JOIN person USING(ssn) ";
+$query = "SELECT first_name, last_name, job_title, phone FROM ".$table." ";
+$query = $query."JOIN person p USING(ssn) ";
+$query = $query."JOIN address a on p.address=a.id ";
 $query = $query."ORDER BY last_name, first_name;";
 ?>
 
@@ -46,7 +52,6 @@ print $query;
 <table>
 <tr>
 <th>Name</th>
-<th>Title</th>
 <th>Phone Number</th>
 </tr>
 <?php
@@ -57,7 +62,6 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "<tr>";
     print "<td>$row[first_name] $row[last_name]</td>";
-    print "<td>$row[job_title]</td>";
     print "<td>$row[phone]</td>";
     print "</tr>";
   }
