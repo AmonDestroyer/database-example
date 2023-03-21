@@ -17,13 +17,27 @@ if ($type == "Employee") {
 <head>
   <title>
   <?php
-    print "$type Directory";
+    print "JAMSS House-$type Directory";
   ?>
   </title>
   <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
+  <script>
+      function returnToHomePage() {
+        window.location.href = "../index.html";
+      }
+    </script>
   </head>
   
   <body bgcolor="white">
+
+  <div id="topbar">
+    <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
+    <h1 id="pageTitle" style="float:left;margin-left:10px;">
+    <?php
+      print "$type Directory";
+    ?>
+    </h1>
+  </div>
   
   
   <hr>
@@ -41,7 +55,7 @@ $query = $query."ORDER BY last_name, first_name;";
 ?>
 
 <p>
-The query:
+Query:
 <p>
 <?php
 print $query;
@@ -81,14 +95,6 @@ mysqli_close($conn);
 
 ?>
 </table>
- 
-<form action="../">
-  <input type="submit" value="Home">
-</form>
-
-<form action="people.html">
-  <input type="submit" value="Back">
-</form>
 
 </body>
 </html>
