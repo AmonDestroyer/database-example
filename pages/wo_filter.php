@@ -51,7 +51,7 @@ print "</form>";
 <hr>
 
 <?php
-if (isset($_POST['type'])) {
+if (!is_null($_POST['type'])) {
 $query = "SELECT id, summary FROM work_order ";
 $query = $query."WHERE type=$_POST[type];";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
