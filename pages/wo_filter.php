@@ -51,17 +51,17 @@ print "</form>";
 <hr>
 
 <?php
+if (isset($_POS['type'])) {
 $query = "SELECT id, summary FROM work_order ";
 $query = $query."WHERE type=$_POST[type];";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
-?>
 
-<table>
-<tr>
-<th>ID</th>
-<th>Summary</th>
-</tr>
-<?php
+
+print "<table>";
+print "<tr>";
+print "<th>ID</th>";
+print "<th>Summary</th>";
+print "</tr>";
 while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
   print "<tr>";
   print "<td>$row[id]</td>";
@@ -71,6 +71,7 @@ while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
 
 mysqli_free_result($result);
 mysqli_close($conn);
+}
 ?>
 </table>
 
