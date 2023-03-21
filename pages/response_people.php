@@ -5,19 +5,13 @@ include('../config/credentials.ini');
 $conn = mysqli_connect($server, $user, $pass, $dbname, $port)
 or die('Error connecting to MySQL server.');
 
-$type = $_POST['personType'];
-if ($type = "employee") {
-  $person = "Employee";
-} else {
-  $person = "Tenant";
-}
 ?>
 
 <html>
 <head>
   <title>
   <?php
-    print "$person Directory";
+    print "$type Directory";
   ?>
   </title>
   <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
