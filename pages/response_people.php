@@ -37,10 +37,6 @@ print $query;
 ?>
 
 <hr>
-<p>
-Result of query:
-</p>
-
 
 <table>
 <tr>
