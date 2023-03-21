@@ -22,23 +22,19 @@
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
       <h1 id="pageTitle" style="float:left;margin-left:10px;">People</h1>
     </div>
-    <div id="content">
-      <form method="POST" action="response_people.php">
-        <input type="submit" value="View Employees">
-      </form>
-    </div>
+    <form method="POST" action="response_people.php">
+      <input type="submit" value="Employee Directory">
+    </form>
+
+    <form method="POST" action="response_people.php">
+      <input type="submit" value="Tenant Directory">
+    </form>
     
     <div id="content">
       <button onclick="makeCall()">New Address</button>
     </div>
     <div id="content">
       <button onclick="makeCall()">New Person</button>
-    </div>
-    <div id="content">
-      <button onclick="makeCall()">View Employees</button>
-    </div>
-    <div id="content">
-      <button onclick="makeCall()">View Tenants</button>
     </div>
   </body>
 </html>
