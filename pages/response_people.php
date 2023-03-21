@@ -41,16 +41,17 @@ print $query;
 Result of query:
 <p>
 
+
+<table>
+<tr>
+<th>Name</th>;
+<th>Title</th>;
+<th>Phone Number</th>;
+</tr>;
 <?php
 $result = mysqli_query($conn, $query)
 or die(mysqli_error($conn));
 
-print "<table>";
-print "<tr>";
-print "<th>Name</th>";
-print "<th>Title</th>";
-print "<th>Phone Number</th>";
-print "</tr>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "<tr>";
@@ -59,13 +60,13 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
     print "<td>$row[phone]</td>";
     print "</tr>";
   }
-print "</table>";
 
 mysqli_free_result($result);
 
 mysqli_close($conn);
 
 ?>
+</table>
  
 <form action="../">
   <input type="submit" value="Home">
