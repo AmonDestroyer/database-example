@@ -43,11 +43,14 @@ Result of query:
 
 
 <table>
+<thread>
 <tr>
 <th>Name</th>
 <th>Title</th>
 <th>Phone Number</th>
 </tr>
+</thread>
+<tbody>
 <?php
 $result = mysqli_query($conn, $query)
 or die(mysqli_error($conn));
@@ -66,6 +69,7 @@ mysqli_free_result($result);
 mysqli_close($conn);
 
 ?>
+</tbody>
 </table>
  
 <form action="../">
