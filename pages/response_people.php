@@ -50,7 +50,6 @@ print "<th>Name</th>";
 print "<th>Title</th>";
 print "<th>Phone Number</th>";
 print "</tr>";
-print "</table>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
   {
     print "<tr>";
