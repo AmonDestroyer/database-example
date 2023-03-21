@@ -34,7 +34,7 @@ if ($type == "Employee") {
 // this is a small attempt to avoid SQL injection
 // better to use prepared statements
 
-$query = "SELECT first_name, last_name, job_title, phone FROM ".$table." ";
+$query = "SELECT first_name, last_name, phone FROM ".$table." ";
 $query = $query."JOIN person p USING(ssn) ";
 $query = $query."JOIN address a on p.address=a.id ";
 $query = $query."ORDER BY last_name, first_name;";
