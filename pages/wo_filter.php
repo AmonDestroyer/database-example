@@ -71,13 +71,11 @@ while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
 
 mysqli_free_result($result);
 mysqli_close($conn);
+} else {
+  print "No work order entries for the given filters";
 }
 ?>
 </table>
-
-<p>
-  Table Ouput Here
-</p>
 
 </body>
 </html>
