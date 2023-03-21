@@ -43,13 +43,13 @@ Result of query:
 
 
 <table>
-<thread>
+<thead>
 <tr>
 <th>Name</th>
 <th>Title</th>
 <th>Phone Number</th>
 </tr>
-</thread>
+</thead>
 <tbody>
 <?php
 $result = mysqli_query($conn, $query)
