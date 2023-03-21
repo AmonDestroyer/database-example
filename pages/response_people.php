@@ -34,7 +34,7 @@ if ($type == "Employee") {
 // this is a small attempt to avoid SQL injection
 // better to use prepared statements
 
-$query = "SELECT first_name, last_name, phone FROM ".$table." ";
+$query = "SELECT first_name, last_name, phone, street_num, apt, street, city, state_code FROM ".$table." ";
 $query = $query."JOIN person p USING(ssn) ";
 $query = $query."JOIN address a on p.address=a.id ";
 $query = $query."ORDER BY last_name, first_name;";
@@ -53,6 +53,7 @@ print $query;
 <tr>
 <th>Name</th>
 <th>Phone Number</th>
+<th>Address</th>
 </tr>
 <?php
 $result = mysqli_query($conn, $query)
@@ -63,6 +64,14 @@ while($row = mysqli_fetch_array($result, MYSQLI_BOTH))
     print "<tr>";
     print "<td>$row[first_name] $row[last_name]</td>";
     print "<td>$row[phone]</td>";
+
+    print "<td>";
+    print "$row[street_num] $row[street]<br>";
+    if ($row[apt] != "") {
+      print "apt $row[apt]<br>";
+    }
+    print "$row[city], $row[state_code]";
+    print "</td>";
     print "</tr>";
   }
 
