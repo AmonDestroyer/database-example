@@ -1,40 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JAMSS House-People</title>
+    <title>JAMSS House-Directory Selection</title>
     <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
     <script>
-      function openPage(name) {
-        window.location.href = "pages/" + name + ".html";
-      }
-
       function returnToHomePage() {
         window.location.href = "../index.html";
-      }
-
-      function makeCall() {
-
       }
     </script>
   </head>
   <body>
     <div id="topbar">
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
-      <h1 id="pageTitle" style="float:left;margin-left:10px;">People</h1>
+      <h1 id="pageTitle" style="float:left;margin-left:10px;">Directory Selection</h1>
     </div>
     <form method="POST" action="response_people.php">
         <input type="radio" id="employee" name="personType" value="Employee" checked="checked">
         <label for="employee">Employee</label><br>
         <input type="radio" id="tenant" name="personType" value="Tenant">
         <label for="tenant">Tenant</label><br>
-        <input type="submit" value="Get Contact Info">
+        <input type="submit" value="Go to Directory">
     </form>
-    
-    <div id="content">
-      <button onclick="makeCall()">New Address</button>
-    </div>
-    <div id="content">
-      <button onclick="makeCall()">New Person</button>
-    </div>
   </body>
 </html>
