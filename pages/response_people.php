@@ -10,6 +10,7 @@ or die('Error connecting to MySQL server.');
 <html>
 <head>
   <title>Assignment4</title>
+  <link rel="stylesheet" type="text/css" href="../resources/css/styles.css">
   </head>
   
   <body bgcolor="white">
