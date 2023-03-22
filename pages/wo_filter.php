@@ -37,24 +37,36 @@ $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 <?php
 print "<form action='' method='POST'>";
-print "<label for='type'>Work Order Type:</label>";
+print "<p><label for='type'>Work Order Type:</label>";
 print "<select name='type' id='type' onchange='this.form.submit()'>";
-print "<option value=''>--Select--</option>";
+print "<option value=''>All</option>";
 while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
   $selected = ($_POST['type'] == $row['id']) ? 'selected' : '';
   print "<option value='$row[id]' $selected>$row[name]</option>";
 }
-print "</select>";
-print "</form>";
+print "</select></p>";
 ?>
-
+  <p>
+  <label for='text'>Text: </label>
+  <input type='text' name='text' id='text' onchange='this.form.submit()' 
+  <?php
+  $text = mysqli_real_escape_string($conn, $_POST['text']);
+  print "value='$text'";
+  ?>
+  >
+</p>
+</form>
 <hr>
 
 <?php
+$query = "SELECT id, summary, description FROM work_order ";
+$query = $query."WHERE ";
+$query = $query."(summary LIKE '%$text%' OR description LIKE '%$text%')";
 if ($_POST['type'] != '') {
-mysqli_free_result($result);
-$query = "SELECT id, summary FROM work_order ";
-$query = $query."WHERE type=$_POST[type];";
+  $type = mysqli_real_escape_string($conn, $_POST['type']);
+  $query = $query."and type = $type";
+}
+$query = $query.";";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 print "<p>Query:</p>";
@@ -64,19 +76,19 @@ print "<table>";
 print "<tr>";
 print "<th>ID</th>";
 print "<th>Summary</th>";
+print "<th>Description</th>";
 print "</tr>";
-while($row = mysqli_fetch_array($result, MYSQL_BOTH)) {
+while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
   print "<tr>";
   print "<td>$row[id]</td>";
   print "<td>$row[summary]</td>";
+  print "<td>$row[description]</td>";
   print "</tr>";
 }
+  
 
 mysqli_free_result($result);
 mysqli_close($conn);
-} else {
-  print "No work order entries for the given filters";
-}
 ?>
 </table>
 
