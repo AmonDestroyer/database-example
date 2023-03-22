@@ -37,7 +37,7 @@ $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 <?php
 print "<form action='' method='POST'>";
-print "<p><label for='type'>Work Order Type:</label>";
+print "<p><label for='type'>Work Order Type:</label><br>";
 print "<select name='type' id='type' onchange='this.form.submit()'>";
 print "<option value=''>All</option>";
 while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
@@ -47,25 +47,27 @@ while ($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
 print "</select></p>";
 ?>
   <p>
-  <label for='text'>Text: </label>
+  <label for='text'>Filter Work Order Summary/Description: </label><br>
   <input type='text' name='text' id='text' onchange='this.form.submit()' 
   <?php
   $text = mysqli_real_escape_string($conn, $_POST['text']);
   print "value='$text'";
   ?>
-  >
+  size= 50 maxlength=50>
 </p>
 </form>
 <hr>
 
 <?php
-$query = "SELECT id, summary, description FROM work_order ";
+$query = "SELECT wo.summary, wo.description, wo.sub_date, wo.comp_date, l.name FROM work_order wo ";
+$query = $query."JOIN location l on l.id=wo.location ";
 $query = $query."WHERE ";
-$query = $query."(summary LIKE '%$text%' OR description LIKE '%$text%')";
+$query = $query."(wo.summary LIKE '%$text%' OR wo.description LIKE '%$text%') ";
 if ($_POST['type'] != '') {
   $type = mysqli_real_escape_string($conn, $_POST['type']);
-  $query = $query."and type = $type";
+  $query = $query."and wo.type = $type ";
 }
+$query = $query."ORDER BY l.name, wo.comp_date";
 $query = $query.";";
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
@@ -74,15 +76,19 @@ print $query;
 print "<hr>";
 print "<table>";
 print "<tr>";
-print "<th>ID</th>";
 print "<th>Summary</th>";
 print "<th>Description</th>";
+print "<th>Location</th>";
+print "<th>Submission Date</th>";
+print "<th>Complettion Date</th>";
 print "</tr>";
 while($row = mysqli_fetch_array($result, MYSQLI_BOTH)) {
   print "<tr>";
-  print "<td>$row[id]</td>";
   print "<td>$row[summary]</td>";
   print "<td>$row[description]</td>";
+  print "<td>$row[name]</td>";
+  print "<td>$row[sub_date]</td>";
+  print "<td>$row[comp_date]</td>";
   print "</tr>";
 }
   
