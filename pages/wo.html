@@ -22,11 +22,11 @@
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
       <h1 id="pageTitle" style="float:left;margin-left:10px;">Work Orders</h1>
     </div>
-    <div id="content">
-      <button onclick="makeCall()">New Work Order</button>
-    </div>
+    <form method="POST" action="wo_submission.php">
+      <input type="submit" value="New Work Order">
+    </form>
     <form method="POST" action="wo_filter.php">
       <input type="submit" value="View Work Orders">
-  </form>
+    </form>
   </body>
 </html>
