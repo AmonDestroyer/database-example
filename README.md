@@ -18,6 +18,7 @@ The applications within this web interface to the database.
 ## Future Improvements
 - Add a login feature so if someone is logged in then different views and options are provided to the user.
 - Add more appltions to add/edit people, employees, addresses.
+- Remove the SSN as the primary key for people as this is a security risk and visible during the person selection in the New Work Order applicaiton.
 
 # Usage
 ## Dependencies
