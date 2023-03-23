@@ -27,5 +27,6 @@ The applications within this web interface to the database.
 Follow the below steps to setup the web interface to the database. 
 1. Create a MySQL server using the provided [MySQL Workbench model](/resources/models/model.mwb).
 2. Create a guest account with SELECT privileges to the database and INSERT and UPDATE privileges to the work_order table.
-3. Copy the [credentials-skel.ini](/config/credentials-skel.ini) file, rename to `credentials.ini` and fill out with the approriate server connection information.
-4. Done
+3. Optional: Upload example data from [example data directory](/resources/example_data/).
+4. Copy the [credentials-skel.ini](/config/credentials-skel.ini) file, rename to `credentials.ini` and fill out with the approriate server connection information.
+5. Done
