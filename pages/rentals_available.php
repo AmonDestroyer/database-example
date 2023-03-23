@@ -26,6 +26,11 @@ or die('Error connecting to MySQL server.');
     <h1 id="pageTitle" style="float:left;margin-left:10px;">
     Available Rentals
     </h1>
+    <div align="right">
+    <form action='rentals.html' method='POST'>
+      <input type='submit' value=&larr;>
+    </form>
+    </div>
   </div>
 
   <?php

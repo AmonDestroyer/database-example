@@ -21,6 +21,11 @@
     <div id="topbar">
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
       <h1 id="pageTitle" style="float:left;margin-left:10px;">Work Orders</h1>
+      <div align="right">
+      <form action='..' method='POST'>
+        <input type='submit' value=&larr;>
+      </form>
+      </div>
     </div>
     <form method="POST" action="wo_submission.php">
       <input type="submit" value="New Work Order">

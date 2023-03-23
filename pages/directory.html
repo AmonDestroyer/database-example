@@ -13,6 +13,11 @@
     <div id="topbar">
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
       <h1 id="pageTitle" style="float:left;margin-left:10px;">Directory Selection</h1>
+      <div align="right">
+      <form action='..' method='POST'>
+        <input type='submit' value=&larr;>
+      </form>
+      </div>
     </div>
     <form method="POST" action="response_directory.php">
         <input type="radio" id="employee" name="personType" value="Employee" checked="checked">

@@ -37,6 +37,11 @@ if ($type == "Employee") {
       print "$type Directory";
     ?>
     </h1>
+    <div align="right">
+    <form action='directory.html' method='POST'>
+      <input type='submit' value=&larr;>
+    </form>
+    </div>
   </div>
   
   

@@ -32,6 +32,11 @@ $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
     <h1 id="pageTitle" style="float:left;margin-left:10px;">
     Work Order Search
     </h1>
+    <div align="right">
+    <form action='wo.html' method='POST'>
+      <input type='submit' value=&larr;>
+    </form>
+    </div>
   </div>
   <hr>
 
