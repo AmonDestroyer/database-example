@@ -99,3 +99,7 @@ table td a {
 table td a:hover {
   text-decoration: underline;
 }
+
+#nowrap {
+  white-space: nowrap;
+}

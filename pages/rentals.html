@@ -22,9 +22,9 @@
       <img src="../resources/image/logo.png" alt="JAMSS House logo" style="float:left;width:100px;height:100px;" onclick="returnToHomePage()">
       <h1 id="pageTitle" style="float:left;margin-left:10px;">Rentals</h1>
     </div>
-    <div id="content">
-      <button onclick="makeCall()">Search Rentals</button>
-    </div>
+    <form method="POST" action="rentals_search.php">
+      <input type="submit" value="Search Rentals">
+    </form>
     <form method="POST" action="rentals_available.php">
       <input type="submit" value="Available Rentals">
     </form>
