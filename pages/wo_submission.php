@@ -42,7 +42,7 @@ $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
   <form action='' method='POST'>
 <p>
 <label for='summary'>Summary: </label><br>
-<input type='text' name='summary' required id='summary' size= 20 maxlength=20 minlength=5
+<input type='text' name='summary' required id='summary' size= 40 maxlength=40 minlength=5
 <?php
 print "value = '$_POST[summary]'"
 ?>
@@ -51,7 +51,7 @@ print "value = '$_POST[summary]'"
 
 <p>
 <label for='description'>Description: </label><br>
-<input type='text' name='description' id='description' size= 50 maxlength=50
+<input type='text' name='description' id='description' size= 100 maxlength=100
 <?php
 print "value = '$_POST[description]'"
 ?>
